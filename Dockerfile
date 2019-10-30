@@ -30,10 +30,13 @@ RUN yum -y --setopt=tsflags=nodocs --nogpgcheck install php72u-cli \
     jpegoptim \
     optipng \
     pngquant \
-    gifsicle
+    gifsicle \
+    cronie
 RUN yum clean all
 RUN rm /etc/php-fpm.d/www.conf
 RUN rm /etc/supervisord.conf
+RUN mkdir -p /run/php-fpm
+RUN chmod 777 /run/php-fpm
 
 ADD fpm.conf /etc/php-fpm.d/
 ADD supervisor.conf /etc/supervisord.conf
