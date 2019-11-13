@@ -38,7 +38,7 @@ RUN rm /etc/supervisord.conf
 RUN mkdir -p /run/php-fpm
 RUN chmod 777 /run/php-fpm
 
-ADD fpm.conf /etc/php-fpm.d/
+ADD php-fpm.conf /etc/php-fpm.conf
 ADD supervisor.conf /etc/supervisord.conf
 
 RUN curl -sS https://getcomposer.org/installer | php && \
