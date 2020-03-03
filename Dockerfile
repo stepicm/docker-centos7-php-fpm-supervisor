@@ -29,7 +29,7 @@ RUN yum -y --setopt=tsflags=nodocs --nogpgcheck install php72u-cli \
     supervisor \
     jpegoptim \
     optipng \
-    pngquant \
+    pngquant-2.7.2-3.el7 \
     gifsicle \
     cronie
 RUN yum clean all
